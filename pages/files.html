@@ -1,0 +1,17 @@
+<div layout="row">
+	<md-button ng-click="refresh()" class="md-raised">Refresh</md-button>
+	<md-button ng-click="back()" class="md-raised">Back</md-button>
+</div>
+<md-subheader class="md-no-sticky">Files: {{path}}</md-subheader>
+<md-content>
+	<md-list>
+		<md-list-item ng-if="fileList.length == 0" >
+			<p>No files found</p>
+		</md-list-item>
+		<md-list-item ng-animate="'animate'" ng-repeat="file in fileList" ng-click="goTo(file.name)">
+			<md-checkbox ></md-checkbox>
+			<p>{{file.name}}</p>
+			<md-icon aria-label="Chat" md-svg-icon="menu"></md-icon>
+		</md-list-item>
+	</md-list>
+</md-content>

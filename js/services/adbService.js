@@ -50,6 +50,13 @@ explorerApp.service('adbService', ['$log','$rootScope', '$mdToast', function($lo
             });
 
     };
+	adbService.getAppsList = function(){
+	  
+		return adbService.client.getPackages(adbService.activeDevice)
+			.then(function(apps) {
+				//adbService.appsList = apps;    
+				$log.debug(apps); 
+			});
 
     adbService.getStats = function(){
     	return adbService.client.openProcStat(adbService.activeDevice)

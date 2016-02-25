@@ -1,0 +1,16 @@
+<div layout="row">
+	hello
+</div>
+<md-content>
+	<md-list>
+		<md-list-item ng-if="appsList.length == 0" >
+			<p>No apps found</p>
+		</md-list-item>
+		<md-list-item ng-animate="'animate'" ng-repeat="app in appsList" >
+			<md-checkbox ></md-checkbox>
+			<img alt="{{ app.title }}" ng-src="{{ app.icon }}" class="md-avatar" />
+			<p>{{app.title}}</p>
+			<md-icon aria-label="Chat" md-svg-icon="menu"></md-icon>
+		</md-list-item>
+	</md-list>
+</md-content>

@@ -52,22 +52,27 @@
 					<md-subheader class="md-no-sticky">Apps</md-subheader>
 					<md-list-item ui-sref="home">
 						<p>Home</p>
-						<md-icon aria-label="Chat" md-svg-icon="menu"></md-icon>
+						<md-icon aria-label="Home" md-svg-icon="menu"></md-icon>
 					</md-list-item>
 					<md-list-item ui-sref="files">
 						<p>File explorer</p>
-						<md-icon aria-label="Chat" md-svg-icon="menu"></md-icon>
+						<md-icon aria-label="File explorer" md-svg-icon="menu"></md-icon>
 					</md-list-item>
-					<md-list-item ui-sref="files">
-						<p>Application</p>
-						<md-icon aria-label="Chat" md-svg-icon="menu"></md-icon>
+					<md-list-item ui-sref="apps">
+						<p>Applications</p>
+						<md-icon aria-label="Applications" md-svg-icon="menu"></md-icon>
 					</md-list-item>
 				</md-list>
 			</md-sidenav>
 			
-			<md-content flex id="content" layout="column" ui-view>
+			<md-content flex id="content" ng-if="!stateIsLoading" layout="column"  ui-view>
 				
 			</md-content>
+
+			<div layout="row" flex ng-if="stateIsLoading" layout-align="center center">
+				<md-progress-circular md-diameter="50%" md-mode="indeterminate"></md-progress-circular>
+			</div>
+        
 		</div>
 		
 		
@@ -80,6 +85,7 @@
 		<script src="./js/controllers/mainController.js" type="text/javascript"></script>
 		<script src="./js/controllers/filesController.js" type="text/javascript"></script>
 		<script src="./js/controllers/homeController.js" type="text/javascript"></script>
+		<script src="./js/controllers/appsController.js" type="text/javascript"></script>
 		<script src="./js/services/adbService.js" type="text/javascript"></script>
 		
 	</body>
